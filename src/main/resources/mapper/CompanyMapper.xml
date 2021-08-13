@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tulun.dao.CompanyMapper">
+    <insert id="insertCompany"   parameterType="companyXZ" >
+        insert into sxs
+        (name,job_url,work_city,price,job_name,company_info,create_time,state,md5_key)
+        values(#{name},#{job_url},#{work_city},#{price},#{job_name},#{company_info},#{create_time},#{state},#{md5_key});
+    </insert>
+
+    <select id="allMd5" resultType="string">
+        select md5_key from sxs;
+    </select>
+</mapper>
