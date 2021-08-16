@@ -7,6 +7,7 @@ package com.tulun;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * Hello world!
@@ -14,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan("com.tulun.dao") //运行过程中,给接口自动生成实现类
+@EnableScheduling
 public class SpiderApplication
 {
     public static void main( String[] args )

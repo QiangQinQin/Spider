@@ -24,4 +24,15 @@ public class CompanyService {
     public List<String> allMd5(){
         return  companyMapper.allMd5();
     }
+
+//    获取新数据
+    public List<CompanyXZ> selectNewCompanies(){
+        return  companyMapper.selectAllNotSend();
+    }
+
+
+    // 提供 变更状态 的方法
+    public int batchUpdateState(List<Integer> ids){
+        return companyMapper.batchUpdateState(ids);
+    }
 }

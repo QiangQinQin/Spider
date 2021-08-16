@@ -1,9 +1,15 @@
 spring:
+#  注意放在最上面
+  thymeleaf:
+       prefix: classpath:web/   # 注意有个空格
+       suffix: .html
+
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1/spider
     username: root
     password: 123456
+
   mail:
      #邮箱服务器地址
     host: smtp.qq.com
@@ -13,6 +19,8 @@ spring:
     password: jlnelkuyznmmdhbg
     #编码格式
     default-encoding: UTF-8
+
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

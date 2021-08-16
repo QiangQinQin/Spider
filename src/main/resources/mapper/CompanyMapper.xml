@@ -13,4 +13,23 @@
     <select id="allMd5" resultType="string">
         select md5_key from sxs;
     </select>
+
+    <!--<resultMap id="companyResult" type="companyXZ">-->
+        <!--<id column="id"  property="id"/>-->
+        <!--<result column="name" property="name" />-->
+        <!---->
+    <!--</resultMap>-->
+
+    <select id="selectAllNotSend" resultType="companyXZ">
+        select * from sxs where state=0;
+    </select>
+
+    <!--动态sql  拼接  https://www.yuque.com/qiangqin/aw0bfu/htyr1a#jowBl
+         update sxs  set state=1 where id in (1,2,3,4,...);   -->
+    <update id="batchUpdateState">
+        update sxs set state=1 where id in 
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
 </mapper>

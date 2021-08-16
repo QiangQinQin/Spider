@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tulun.dao.StudentMapper">
+    <insert id="insertStudent" parameterType="student">
+        insert into user(name,email,graduate_time,school,class,create_time)
+        values(#{name},#{email},#{graduate_time},#{school},#{tlclass},#{create_time});
+    </insert>
+
+    <select id="findGraduates" parameterType="Integer" resultType="string">
+        select email from user where graduate_time =#{year}
+    </select>
+</mapper>
